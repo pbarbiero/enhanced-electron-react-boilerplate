@@ -1,6 +1,6 @@
 // Init reduxHelper
-import { createUtil } from '../../utils/redux.js';
-const reduxUtil = createUtil('example');
+import reduxHelper from '../../utils/reduxHelper.js';
+const reduxUtil = reduxHelper('example');
 
 // Include component
 import component from './example.js';

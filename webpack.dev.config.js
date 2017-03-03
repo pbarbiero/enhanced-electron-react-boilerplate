@@ -10,7 +10,10 @@ const OUTPUT_DIR = path.resolve(__dirname, 'dist');
 const defaultInclude = [ SRC_DIR ];
 
 module.exports = {
-  entry: SRC_DIR + '/index.js',
+  entry: [
+    'react-hot-loader/patch', // activate HMR for React
+    SRC_DIR + '/index.js' // main entry point for app
+  ],
   output: {
     path: OUTPUT_DIR,
     publicPath: '/',
@@ -23,7 +26,7 @@ module.exports = {
         { loader: 'css-loader' }
       ], include: defaultInclude },
       { test: /\.js?$/, use: [
-        { loader: 'babel-loader' }
+        { loader: 'babel-loader', options: { forceEnv: 'development' } }
       ], include: defaultInclude },
       { test: /\.(jpe?g|png|gif)$/, use: [
         { loader: 'file-loader?name=img/[name]__[hash:base64:5].[ext]' }
@@ -36,8 +39,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"dev"',
-    }),
+			process: { env: { NODE_ENV: JSON.stringify('development') } }
+		}),
+    new webpack.NamedModulesPlugin()
   ],
   devtool: "cheap-source-map",
   devServer: {

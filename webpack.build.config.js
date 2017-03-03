@@ -24,7 +24,7 @@ module.exports = {
         use: "css-loader"
       }), include: defaultInclude },
       { test: /\.js?$/, use: [
-        { loader: 'babel-loader' }
+        { loader: 'babel-loader', options: { forceEnv: 'production' } }
       ], include: defaultInclude },
       { test: /\.(jpe?g|png|gif)$/, use: [
         { loader: 'file-loader?name=img/[name]__[hash:base64:5].[ext]' }
@@ -37,8 +37,8 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin("bundle.css"),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"',
-    }),
+			process: { env: { NODE_ENV: JSON.stringify('production') } }
+		}),
     new BabiliPlugin()
   ],
   stats: {

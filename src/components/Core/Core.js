@@ -1,30 +1,34 @@
-import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 
-import { components } from '../components.js';
+import { components, history, store } from '../components.js';
 
 const Core = () => {
   return (
-    <div className="window">
-      <div className="window-content">
-        <div className="pane-group">
-          <div className="pane-sm sidebar"><components.Menu /></div>
-          <div className="pane padded"><AppRouter /></div>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <div className="window">
+          <div className="window-content">
+            <div className="pane-group">
+              <div className="pane-sm sidebar"><components.Menu /></div>
+              <div className="pane padded"><AppRouter /></div>
+            </div>
+          </div>
+          <components.Footer />
         </div>
-      </div>
-      <components.Footer />
-    </div>
+      </ConnectedRouter>
+    </Provider>
   );
 }
 
 const AppRouter = () => {
   return (
-    <Router>
-      <div>
-        <Route exact path="/" component={Home} />
-        <Route path="/example" component={components.Example} />
-      </div>
-    </Router>
+    <Switch>
+      <Route exact path="/index.html" component={Home} />
+      <Route path="/example" component={components.Example} />
+    </Switch>
   );
 }
 

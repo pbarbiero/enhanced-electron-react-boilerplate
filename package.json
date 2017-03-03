@@ -1,6 +1,6 @@
 {
   "name": "enhanced-electron-react-boilerplate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Modern and somewhat opinionated react+electron+webpack boilerplate",
   "author": "Phillip Barbiero",
   "homepage": "https://github.com/PhillMcKraken/enhanced-electron-react-boilerplate",
@@ -13,7 +13,7 @@
   "scripts": {
     "testDev": "electron main.js",
     "testProd": "electron main.js --noDevServer",
-    "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+    "dev": "webpack-dev-server --hot --hotOnly --host 0.0.0.0 --config=./webpack.dev.config.js",
     "build": "webpack --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
     "postpackage": "electron-packager ./ --out=./builds"
@@ -21,8 +21,10 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-preset-react": "^6.23.0",
     "babili-webpack-plugin": "0.0.10",
+    "connected-react-router": "^4.0.0-beta.4",
     "css-loader": "^0.26.1",
     "electron": "^1.4.15",
     "electron-packager": "^8.5.2",
@@ -33,6 +35,7 @@
     "less-loader": "^2.2.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.2",
     "react-router-dom": "^4.0.0-beta.6",
     "redux": "^3.6.0",

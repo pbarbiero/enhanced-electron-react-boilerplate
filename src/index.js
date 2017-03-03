@@ -15,3 +15,12 @@ document.body.appendChild( root );
 
 // Now we can render our application into it. Main entry point is always the 'Core' component
 render( <components.Core />, document.getElementById('root') );
+
+// Hot Module Replacement API
+if (module.hot) {
+  // If an update is in one of the React components we've included, we can attempt an HMR
+  // Note: we are using the only-hot so the app will NOT forcefully reload if it fails
+  module.hot.accept( './components/components.js', () => {
+    render( <components.Core />, document.getElementById('root') );
+  });
+}
