@@ -3,6 +3,8 @@ import "./component.css";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import config from 'electron-json-config';
+import { Prompt } from 'react-router-dom';
+import * as deepEqual from 'deep-equal';
 
 import { TextInput, SelectBox, resetUID } from '../inputs.js';
 import { actions } from './component.js';
@@ -39,16 +41,19 @@ class Settings extends Component {
   }
   reset = () => {
     this.setState( this.originalState );
-    console.log('reset', this.originalState );
   }
   save = () => {
-    console.log('save', this.state );
     this.originalState = this.state;
     this.props.saveSettings( this.state );
   }
   render() {
     return (
       <div className="box">
+        <Prompt
+          when={ !deepEqual( this.state, this.originalState ) }
+          message="You have unsaved changes in your form. Are you sure you wish to leave?"
+        />
+
         <header className="toolbar toolbar-header">
           <h1 className="title">Settings Example</h1>
         </header>

@@ -1,7 +1,7 @@
 'use strict';
 
 // Import parts of electron to use
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Menu} = require('electron');
 const path = require('path')
 const url = require('url')
 
@@ -20,6 +20,9 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1024, height: 768, show: false
   });
+
+  // Setup menu, you should change this
+  Menu.setApplicationMenu( null )
 
   // and load the index.html of the app.
   let indexPath;

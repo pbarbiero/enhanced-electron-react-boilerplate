@@ -1,5 +1,6 @@
-//import * as Redux from 'redux';
-import { createBrowserHistory } from 'history';
+import electron from 'electron';
+
+import { createHashHistory } from 'history';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 
@@ -23,16 +24,38 @@ allComponents.forEach( function( name ) {
 reducers = combineReducers( reducers );
 
 // Start history
-const history = createBrowserHistory();
+const history = createHashHistory({
+  // Here we override prompt to use the native electron dialog module, this lets us override the message box title
+  getUserConfirmation: (message, callback) => {
+    electron.remote.dialog.showMessageBox(
+      {
+        title: 'Confirm Navigation',
+        type: 'question',
+        buttons: ['Yes', 'No'],
+        message
+      },
+      (clickedIdx) => {
+        if ( clickedIdx === 0 ) {
+          callback( true );
+        } else {
+          callback( false );
+        }
+      }
+    )
+  }
+
+  //callback(window.confirm(message))
+});
 
 // Merge middlewares
 let middlewares = [
-  routerMiddleware(history),
+  routerMiddleware(history)
 ];
 
 // Development adds logging, must be last
 if ( process.env.NODE_ENV !== "production") {
   middlewares.push( require('redux-logger')({
+    // Change this configuration to your liking
     duration: true, collapsed: true
   }) );
 }
@@ -40,12 +63,10 @@ if ( process.env.NODE_ENV !== "production") {
 // Generate store
 const store = createStore(
   connectRouter(history)(reducers),
-  applyMiddleware(
-    ...middlewares
-  )
+  applyMiddleware(...middlewares)
 );
 
-// Build and return store
+// Export all the separate modules
 export {
   components,
   history,

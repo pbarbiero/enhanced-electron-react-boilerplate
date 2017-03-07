@@ -36,7 +36,7 @@ module.exports = {
       ], include: defaultInclude }
     ]
   },
-  externals: {
+  externals: { // this is temporary until target: 'electron-renderer' doesnt break dev server in hot mode
     'electron': 'require("electron")',
     'net': 'require("net")',
     'remote': 'require("remote")',
