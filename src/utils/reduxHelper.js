@@ -8,13 +8,7 @@ const reduxHelper = ( moduleName ) => {
   // Reduces boilerplate
   const createAction = ( type ) => {
     return function actionCreator( payload ) {
-      const action = {
-        type: type
-      };
-      if (payload != null) {
-        action.payload = payload;
-      }
-      return action;
+      return { type, payload: { ...payload } };
     };
   }
 

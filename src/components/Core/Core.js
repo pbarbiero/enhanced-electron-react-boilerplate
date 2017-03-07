@@ -26,7 +26,7 @@ const Core = () => {
 const AppRouter = () => {
   return (
     <Switch>
-      <Route exact path="/index.html" component={Home} />
+      <Route path="/index.html" component={Home} />
       <Route path="/example" component={components.Example} />
     </Switch>
   );

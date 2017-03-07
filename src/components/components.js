@@ -13,8 +13,8 @@ let reducers = {};
 let components = {};
 allComponents.forEach( function( name ) {
   let thisComponent = require('./'+ name +'/component.js');
-  if ( thisComponent.redux ) {
-    reducers[ name ] = thisComponent.redux.reducer;
+  if ( thisComponent.reducer ) {
+    reducers[ name ] = thisComponent.reducer;
   }
   components[ name ] = thisComponent.component;
 } );

@@ -14,7 +14,7 @@ module.exports = {
   entry: SRC_DIR + '/index.js',
   output: {
     path: OUTPUT_DIR,
-    publicPath: '/',
+    publicPath: './',
     filename: 'bundle.js'
   },
   module: {
@@ -34,6 +34,7 @@ module.exports = {
       ], include: defaultInclude }
     ]
   },
+  target: 'electron-renderer',
   plugins: [
     new ExtractTextPlugin("bundle.css"),
     new webpack.DefinePlugin({
