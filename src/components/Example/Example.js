@@ -1,5 +1,3 @@
-import "./component.css";
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import config from 'electron-json-config';
@@ -13,7 +11,7 @@ const Example = () => {
   return (
     <div>
       <h1>Example Component</h1>
-      <p>This demonstrates stateful react components utilizing redux, with hooks into electron-config to persist some options</p>
+      <p>This demonstrates stateful react components utilizing redux, with hooks into electron-config to persist some options.</p>
       <Settings />
     </div>
   );

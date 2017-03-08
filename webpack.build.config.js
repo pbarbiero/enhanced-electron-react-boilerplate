@@ -20,8 +20,15 @@ module.exports = {
   module: {
     rules: [
       { test: /\.css$/, use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: "css-loader"
+        fallback: 'style-loader',
+        use: 'css-loader'
+      }), include: defaultInclude },
+      { test: /\.less$/, use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+          { loader: 'css-loader', options: { modules: true } },
+          { loader: 'less-loader' }
+        ]
       }), include: defaultInclude },
       { test: /\.js?$/, use: [
         { loader: 'babel-loader', options: { forceEnv: 'production' } }

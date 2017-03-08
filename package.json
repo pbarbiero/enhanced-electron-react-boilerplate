@@ -13,8 +13,8 @@
   "scripts": {
     "testDev": "electron .",
     "testProd": "electron . --noDevServer",
-    "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
-    "build": "webpack --config webpack.build.config.js",
+    "dev": "webpack-dev-server --progress --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+    "build": "webpack --progress --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
     "postpackage": "electron-packager ./ --out=./builds"
   },
@@ -40,7 +40,7 @@
     "react-dom": "^15.4.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.3",
-    "react-router-dom": "^4.0.0-beta.6",
+    "react-router-dom": "^4.0.0-beta.7",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.2",
     "style-loader": "^0.13.2",

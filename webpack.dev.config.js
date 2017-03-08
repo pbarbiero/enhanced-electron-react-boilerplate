@@ -25,6 +25,11 @@ module.exports = {
         { loader: 'style-loader' },
         { loader: 'css-loader' }
       ], include: defaultInclude },
+      { test: /\.less$/, use: [
+        { loader: 'style-loader' },
+        { loader: 'css-loader', options: { modules: true } },
+        { loader: 'less-loader' }
+      ], include: defaultInclude },
       { test: /\.js?$/, use: [
         { loader: 'babel-loader', options: { forceEnv: 'development' } }
       ], include: defaultInclude },

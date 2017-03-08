@@ -3,7 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Global CSS
-import './assets/photon/css/photon.css';
+import "./assets/css/globals.css";
+import './vendor/photon/css/photon.css';
 
 // Grab all components dynamically
 import { components, store } from './components/components.js';
