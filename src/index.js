@@ -7,7 +7,7 @@ import "./assets/css/globals.css";
 import './vendor/photon/css/photon.css';
 
 // Grab all components dynamically
-import { components, store } from './components/components.js';
+import { components } from './components/components.js';
 
 // Since we are using HtmlWebpackPlugin WITHOUT a template, we should create our own root node in the body element before rendering into it
 let root = document.createElement('div');

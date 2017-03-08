@@ -4,20 +4,22 @@ import { createHashHistory } from 'history';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 
-// Define all components your app uses here
-const allComponents = [
-  'Core', 'Example', 'Footer', 'Menu'
-];
+// This grabs all 'component.js' files in subdirectories under /components/
+const allComponents = require.context('./', true, /component\.js$/);
 
-// Grab the redux reducer function from the components's 'component' file
+// Grab the redux reducer function from the components's 'component' file, as well as the component itself
 let reducers = {};
 let components = {};
-allComponents.forEach( function( name ) {
-  let thisComponent = require('./'+ name +'/component.js');
+allComponents.keys().forEach( ( path ) => {
+  let name = path.split('/')[1];
+  let thisComponent = allComponents( path );
+  if ( !thisComponent.component ) {
+    console.warn(`Component "${name}" is in an invalid format, ignoring. Found at: "${path}"`);
+  }
+  components[ name ] = thisComponent.component;
   if ( thisComponent.reducer ) {
     reducers[ name ] = thisComponent.reducer;
   }
-  components[ name ] = thisComponent.component;
 } );
 
 // Compile reducers
