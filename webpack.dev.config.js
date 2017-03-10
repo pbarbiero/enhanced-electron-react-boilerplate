@@ -41,22 +41,11 @@ module.exports = {
       ], include: defaultInclude }
     ]
   },
-  externals: { // this is temporary until target: 'electron-renderer' doesnt break dev server in hot mode
-    'electron': 'require("electron")',
-    'net': 'require("net")',
-    'remote': 'require("remote")',
-    'shell': 'require("shell")',
-    'app': 'require("app")',
-    'ipc': 'require("ipc")',
-    'fs': 'require("fs")',
-    'buffer': 'require("buffer")',
-    'system': '{}',
-    'file': '{}'
-  },
+  target: 'electron-renderer',
   plugins: [
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
-			process: { env: { NODE_ENV: JSON.stringify('development') } }
+      'process.env.NODE_ENV': JSON.stringify('development')
 		}),
     new webpack.NamedModulesPlugin()
   ],

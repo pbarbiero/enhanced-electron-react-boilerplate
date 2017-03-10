@@ -16,7 +16,8 @@
     "dev": "webpack-dev-server --progress --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
     "build": "webpack --progress --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage": "electron-packager ./ --out=./builds"
+    "postpackage": "electron-packager ./ --out=./builds",
+    "scaffold": "node ./scaffold/scaffold.js"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -24,7 +25,7 @@
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-react": "^6.23.0",
-    "babili-webpack-plugin": "0.0.11",
+    "babili-webpack-plugin": "^0.0.11",
     "connected-react-router": "^4.0.0-beta.4",
     "css-loader": "^0.26.2",
     "deep-equal": "^1.0.1",
@@ -44,6 +45,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.2",
     "style-loader": "^0.13.2",
+    "vorpal": "^1.11.4",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }
