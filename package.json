@@ -17,7 +17,8 @@
     "build": "webpack --progress --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
     "postpackage": "electron-packager ./ --out=./builds",
-    "scaffold": "node ./scaffold/scaffold.js"
+    "scaffold": "node ./scaffold/scaffold.js",
+    "postinstall": "cd ./scaffold && npm install"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

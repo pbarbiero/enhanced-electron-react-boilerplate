@@ -5,7 +5,7 @@ import reduxHelper from '../../utils/reduxHelper.js';
 const reduxUtil = reduxHelper('Example');
 
 // Include component
-import component from './example.js';
+import component from './Example.js';
 
 // Action Definitions
 const SAVE_SETTINGS = reduxUtil.defineAction('SAVE_SETTINGS');
