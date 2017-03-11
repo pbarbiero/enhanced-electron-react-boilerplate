@@ -1,8 +1,6 @@
 # Modern and Minimal Electron + React Starter Kit
 _Electron, React, Webpack -- Modern and up-to-date, with a handful of quality of life features included_
 
-#### This project is under heavy development still, and should *NOT* be used unless you want to help contribute or shape this project
-
 I made this starter kit as most boilerplates were either out-of-date, heavy handed, or enforced a structure on me that I just didn't like.
 This project utilizes Redux and uses the "ducks" proposal as the basis for the layout and structure of the application views. CSS files are treated as globals, with any less files being compiled as a css module.
 The goal is to provide a ready to use, easy to adopt boilerplate and starter kit to get rolling with a modern environment, without too much of a "personal" twist on things.
