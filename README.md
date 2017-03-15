@@ -7,7 +7,7 @@ The goal is to provide a ready to use, easy to adopt boilerplate and starter kit
 
 Production builds do NOT use UglifyJS, instead Babili is used and NO ES2015/ES6 transpilation is provided -- As modern node and chromium versions support 99%+ of the ES6 feature set, I feel those steps are unnecessary.
 
-If you like this project (or think its too heavy handed and want something more minimal), check out [basic-electron-react-boilerplate](https://github.com/PhillMcKraken/basic-electron-react-boilerplate) which is a cut down version of this project without any decisions made on what you should be using or how to structure your application. Its the bare minimum to get up and running with electron+react+webpack.
+If you like this project (or think its too heavy handed and want something more minimal), check out [basic-electron-react-boilerplate](https://github.com/pbarbiero/basic-electron-react-boilerplate) which is a cut down version of this project without any decisions made on what you should be using or how to structure your application. Its the bare minimum to get up and running with electron+react+webpack.
 
 ### Main features
 * Latest React, Redux, and Webpack 2

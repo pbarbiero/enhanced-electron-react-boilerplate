@@ -3,10 +3,10 @@
   "version": "0.3.1",
   "description": "Modern and somewhat opinionated react+electron+webpack boilerplate",
   "author": "Phillip Barbiero",
-  "homepage": "https://github.com/PhillMcKraken/enhanced-electron-react-boilerplate",
+  "homepage": "https://github.com/pbarbiero/enhanced-electron-react-boilerplate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PhillMcKraken/enhanced-electron-react-boilerplate.git"
+    "url": "https://github.com/pbarbiero/enhanced-electron-react-boilerplate.git"
   },
   "license": "MIT",
   "main": "main.js",
