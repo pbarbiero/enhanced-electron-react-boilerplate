@@ -1,5 +1,5 @@
 // Include component
-import component from './menu.js';
+import component from './Menu.js';
 
 // Export
 export {
