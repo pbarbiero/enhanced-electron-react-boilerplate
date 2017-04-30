@@ -1,5 +1,5 @@
 // Include component
-import component from './footer.js';
+import component from './Footer.js';
 
 // Export
 export {
