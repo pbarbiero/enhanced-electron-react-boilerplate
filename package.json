@@ -1,6 +1,6 @@
 {
   "name": "enhanced-electron-react-boilerplate",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Modern and somewhat opinionated react+electron+webpack boilerplate",
   "author": "Phillip Barbiero",
   "homepage": "https://github.com/pbarbiero/enhanced-electron-react-boilerplate",
