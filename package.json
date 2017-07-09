@@ -11,9 +11,8 @@
   "license": "MIT",
   "main": "main.js",
   "scripts": {
-    "testDev": "electron .",
-    "testProd": "electron . --noDevServer",
-    "dev": "webpack-dev-server --progress --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+    "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+    "prod": "webpack --progress --config webpack.build.config.js && electron --noDevServer .",
     "build": "webpack --progress --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
     "postpackage": "electron-packager ./ --out=./builds",
