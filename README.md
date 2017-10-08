@@ -5,19 +5,19 @@ I made this starter kit as most boilerplates were either out-of-date, heavy hand
 This project utilizes Redux and uses the "ducks" proposal as the basis for the layout and structure of the application views. CSS files are treated as globals, with any less files being compiled as a css module.
 The goal is to provide a ready to use, easy to adopt boilerplate and starter kit to get rolling with a modern environment, without too much of a "personal" twist on things.
 
-Production builds do NOT use UglifyJS, instead Babili is used and NO ES2015/ES6 transpilation is provided -- As modern node and chromium versions support 99%+ of the ES6 feature set, I feel those steps are unnecessary.
+Production builds babel-minify is used, and ES2015/ES6 transpilation is provided -- As modern node and chromium versions support 99%+ of the ES6 feature set, I feel those steps are unnecessary.
 
 If you like this project (or think its too heavy handed and want something more minimal), check out [basic-electron-react-boilerplate](https://github.com/pbarbiero/basic-electron-react-boilerplate) which is a cut down version of this project without any decisions made on what you should be using or how to structure your application. Its the bare minimum to get up and running with electron+react+webpack.
 
 ### Main features
-* Latest React, Redux, and Webpack 2
+* Latest React, Redux, and Webpack 3
 * Uses ES6 natively without babel transpilation thanks to modern Electron environments
-* Minified with Babili
+* Minified with babel-minify
 * Uses react-router-dom (React Router v4) with connected-react-router to sync with Redux (uni-directional, use react-router directly)
 * LessCSS (easily swapped to Sass if that's more to your liking) using CSS Modules
 * Provides a basic component/view structure based on Redux "ducks" proposals, with an included utility helper to make writing your 'views' easier and understandable, with the advantage of minimizing the amount of required files and directory switching
 * Embeds [PhotonKit](http://photonkit.com/) for a very basic head start on layouts and styling. Its lightweight and easy to rip out or build on top of.
-* _More to come! Feel free to contribute your suggestions and/or ideas_
+* _You however are encouraged to adapt this as much as you like. If you find you want to rip out too much, bake sure you try [basic-electron-react-boilerplate](https://github.com/pbarbiero/basic-electron-react-boilerplate) instead._
 
 ### To get started:
 * Run `npm install`
@@ -43,3 +43,4 @@ This project comes with a basic scaffold utility (built on inquirer) to quickly 
 * Run `npm run scaffold`
 * Fill out the prompts
 * Profit!
+_You can always edit the scripts yourself to tweak the templates if you don't like it out of the box_
